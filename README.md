@@ -11,58 +11,74 @@ CYUT Machine Learning Class Final Report for AI CUP 2024 Fall: 根據區域微�
 - Matplotlib: 3.9.2
 - LightGBM: 4.5.0
 ## Dataset
-- 來源
-  - AICUP官網 L1~L17_Train.csv 以及 L2,4,7,8,9,10,12_Train_2.csv
-- 資料集
-  - ML_finalReport_train.csv : 訓練的資料
-  - ML_finalReport_test.csv : 預測的資料
-- 特徵(處理前)
-  - `LocationCode`: 位置
-  - `DateTime`: 日期時間
-  - `WindSpeed(m/s)`: 風速
-  - `Pressure(hpa)`: 氣壓
-  - `Temperature(°C)`: 氣溫
-  - `Humidity(%)`: 濕度
-  - `Sunlight(Lux)`: 光照強度
-  - `Power(mW)`: 發電量
-- 特徵(處理後)
-  - LocationCode
-  - DateTime
-  - WindSpeed(m/s)
-  - Pressure(hpa)
-  - Temperature(°C),
-  - Humidity(%)
-  - Sunlight(Lux)
-  - Power(mW)
-  - year
-  - month
-  - day
-  - hour
-  - minute
-  - weekday
-  - hour_sin
-  - hour_cos
-  - minute_sin
-  - minute_cos
-  - month_sin
-  - month_cos
-  - quarter
-  - day_of_year
-  - week_of_year
-  - hour_squared
-  - time_of_day
-- 資料筆數及維度
-  - 處理前 : (1375028, 8)
-  - 處理後
-    - 訓練集 : (1335199, 25)
-    - 測試集 : (20393, 25)
-- 腳本 : `ML_finalReport_traindata.py`
-- 步驟
-  1. 剔除不合理的數據（如缺失值、異常值等）。
-  2. 拆分 `DateTime`將其轉換為 `year`, `month`, `day`, `hour`, `minute`, `weekday`。
-  3. 利用拆分的時間特徵，計算時間的週期性特徵：`hour_sin`, `hour_cos`, `minute_sin`, `minute_cos`, `month_sin`, `month_cos`。
-  4. 增加其他時間周期性特徵：`quarter`, `day_of_year`, `week_of_year`, `hour_squared`, `time_of_day`。
-  5. 將每月30日的9點至15點的數據存入 `test.csv`，其他數據存入 `train.csv` 進行訓練。
+
+### 1. 資料來源
+- **官方資料集**：來自 AICUP 官網的 L1~L17_Train.csv 以及 L2,4,7,8,9,10,12_Train_2.csv。
+
+### 2. 資料集
+- **訓練資料**：`ML_finalReport_train.csv`，用於模型訓練。
+- **測試資料**：`ML_finalReport_test.csv`，用於模型預測。
+
+### 3. 特徵 (處理前)
+以下為原始資料集中的特徵：
+- `LocationCode`：位置代碼
+- `DateTime`：日期與時間
+- `WindSpeed(m/s)`：風速
+- `Pressure(hpa)`：氣壓
+- `Temperature(°C)`：氣溫
+- `Humidity(%)`：濕度
+- `Sunlight(Lux)`：光照強度
+- `Power(mW)`：發電量
+
+### 4. 特徵 (處理後)
+處理後的資料集包含以下特徵：
+- `LocationCode`：位置代碼
+- `DateTime`：日期與時間
+- `WindSpeed(m/s)`：風速
+- `Pressure(hpa)`：氣壓
+- `Temperature(°C)`：氣溫
+- `Humidity(%)`：濕度
+- `Sunlight(Lux)`：光照強度
+- `Power(mW)`：發電量
+- `year`：年份
+- `month`：月份
+- `day`：日期
+- `hour`：小時
+- `minute`：分鐘
+- `weekday`：星期幾
+- `hour_sin`：小時的正弦週期性特徵
+- `hour_cos`：小時的餘弦週期性特徵
+- `minute_sin`：分鐘的正弦週期性特徵
+- `minute_cos`：分鐘的餘弦週期性特徵
+- `month_sin`：月份的正弦週期性特徵
+- `month_cos`：月份的餘弦週期性特徵
+- `quarter`：季度
+- `day_of_year`：年度中的第幾天
+- `week_of_year`：年度中的第幾周
+- `hour_squared`：小時的平方
+- `time_of_day`：一天中的時間段（如早上、下午等）
+
+### 5. 資料筆數及維度
+- **處理前**：1375028 筆資料，8 個特徵
+- **處理後**：
+  - 訓練集：1335199 筆資料，25 個特徵
+  - 測試集：20393 筆資料，25 個特徵
+
+### 6. 腳本
+- **資料處理腳本**：`ML_finalReport_traindata.py`
+
+### 7. 資料處理步驟
+1. **剔除不合理的數據**：
+   - 處理缺失值與異常值。
+2. **拆分 `DateTime`**：
+   - 將 `DateTime` 轉換為 `year`、`month`、`day`、`hour`、`minute`、`weekday`。
+3. **計算時間週期性特徵**：
+   - 根據拆分的時間特徵，計算：`hour_sin`、`hour_cos`、`minute_sin`、`minute_cos`、`month_sin`、`month_cos`。
+4. **增加其他時間週期性特徵**：
+   - 計算：`quarter`、`day_of_year`、`week_of_year`、`hour_squared`、`time_of_day`。
+5. **資料劃分**：
+   - 將每月 30 日的 9 點至 15 點的數據存入 `test.csv`，其他數據存入 `train.csv` 進行訓練。
+
 ## Train
   - **Linear Regression**
     - 腳本 : `ML_finalReport_linear.py`
