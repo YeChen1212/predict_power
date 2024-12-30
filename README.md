@@ -1,5 +1,5 @@
 # predict_power
-CYUT Machine Learning Class Final Report for AI CUP 2024 Fall: Predicting Solar Energy Power
+CYUT Machine Learning Class Final Report for AI CUP 2024 Fall: 根據區域微氣候資料預測發電量競賽
 ## 簡介
 使用 Linear Regression 、LightGBM及Multi-layer Perceptron Regressor來預測太陽能發電量，由於AICUP官方還沒有給最後解答，所以本篇以資料集內每個月的三十日的早上九點到下午三點來當作預測的目標並比較這三種模型所預測出的結果跟實際結果。
 ## Runtime Environment
@@ -94,3 +94,7 @@ CYUT Machine Learning Class Final Report for AI CUP 2024 Fall: Predicting Solar 
       | R² 分數 | 151088.971 | 22723.869 | 52031.444 | 17736.343 |
       | 均方根誤差 (RMSE) | 151088.971 | 22723.869 | 52031.444 | 17736.343 |
       | 總發電量(9842244mW) | 總誤差(9280692mW) | 總誤差(5967945mW) | 總誤差(8951724mW) | 總誤差(5913228mW) |
+  
+  - LightGBM_stacking的結果最好，以此方法實際去比賽AICUP秋季賽根據區域微氣候資料預測發電量競賽。
+    - Private Leaderboard 22 名。
+    - Private Leaderboard 成績(總誤差)619536.9。
