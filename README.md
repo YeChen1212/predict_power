@@ -80,26 +80,31 @@ CYUT Machine Learning Class Final Report for AI CUP 2024 Fall: 根據區域微�
    - 將每月 30 日的 9 點至 15 點的數據存入 `test.csv`，其他數據存入 `train.csv` 進行訓練。
 
 ## Train
-  - **Linear Regression**
-    - 腳本 : `ML_finalReport_linear.py`
-    - 結果 :
-      
-  ![linear](images/linear.png)
-  - **LightGBM**
-    - 腳本 : `ML_finalReport_lightgbm.py`
-    - 結果 :
-      
-  ![lightgbm](images/LightGBM.png)
-  - **Multi-layer Perceptron Regressor**
-    - 腳本 : `ML_finalReport_mlp.py`
-    - 結果 :
 
-  ![lightgbm](images/MLP.png)
-  - **LightGBM stacking**
-    - 腳本 : `ML_finalReport_lightgbm_stack.py`
-    - 結果 :
-      
-  ![lightgbm](images/LightGBM_stacking.png)
+### 1. **Linear Regression**
+   - **腳本**: `ML_finalReport_linear.py`
+   - **結果**：
+   
+   ![linear](images/linear.png)
+   
+### 2. **LightGBM**
+   - **腳本**: `ML_finalReport_lightgbm.py`
+   - **結果**：
+   
+   ![lightgbm](images/LightGBM.png)
+   
+### 3. **Multi-layer Perceptron Regressor**
+   - **腳本**: `ML_finalReport_mlp.py`
+   - **結果**：
+   
+   ![mlp](images/MLP.png)
+   
+### 4. **LightGBM Stacking**
+   - **腳本**: `ML_finalReport_lightgbm_stack.py`
+   - **結果**：
+   
+   ![lightgbm_stacking](images/LightGBM_stacking.png)
+
 ## 結論
   - 四個模型比較
 
