@@ -67,13 +67,30 @@ CYUT Machine Learning Class Final Report for AI CUP 2024 Fall: Predicting Solar 
   - **Linear Regression**
     - 腳本 : `ML_finalReport_linear.py`
     - 結果 :
-    
-    | 指標               | 數值          |
-    |--------------------|---------------|
-    | 均方誤差 (MSE)      | 151088.971    |
-    | 平均絕對值誤差 (MAE) | 256.771       |
-    | R² 分數            | 0.244         |
-    | 均方根誤差 (RMSE)    | 388.701       |
-    | 總發電量 (mW)       | 9842244       |
-    | 總誤差 (mW)         | 9280692       |
-    
+      
+  ![linear](images/linear.png)
+  - **LightGBM**
+    - 腳本 : `ML_finalReport_lightgbm.py`
+    - 結果 :
+      
+  ![lightgbm](images/LightGBM.png)
+  - **Multi-layer Perceptron Regressor**
+    - 腳本 : `ML_finalReport_mlp.py`
+    - 結果 :
+
+  ![lightgbm](images/MLP.png)
+  - **LightGBM stacking**
+    - 腳本 : `ML_finalReport_lightgbm_stack.py`
+    - 結果 :
+      
+  ![lightgbm](images/LightGBM_stacking.png)
+## 結論
+  - 四個模型比較
+
+      |    | linear  | LightGBM  | MLP  | stacking  |
+      |:--------------------:|:---------------:|:---------------:|:---------------:|:---------------:|
+      | 均方誤差 (MSE) | 151088.971 | 22723.869 | 52031.444 | 17736.343 |
+      | 平均絕對值誤差 (MAE) | 151088.971 | 22723.869 | 52031.444 | 17736.343 |
+      | R² 分數 | 151088.971 | 22723.869 | 52031.444 | 17736.343 |
+      | 均方根誤差 (RMSE) | 151088.971 | 22723.869 | 52031.444 | 17736.343 |
+      | 總發電量(9842244mW) | 總誤差(9280692mW) | 總誤差(5967945mW) | 總誤差(8951724mW) | 總誤差(5913228mW) |
