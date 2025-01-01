@@ -1,5 +1,5 @@
 # predict_power
-CYUT Machine Learning Class Final Report for AI CUP 2024 Fall: 根據區域微氣候資料預測發電量競賽
+CYUT Machine Learning Class Final Report for AI CUP 2024 Fall 根據區域微氣候資料預測發電量競賽
 ## 簡介
 使用 Linear Regression 、LightGBM及Multi-layer Perceptron Regressor來預測太陽能發電量，由於AICUP官方還沒有給最後解答，所以本篇以資料集內每個月的三十日的早上九點到下午三點來當作預測的目標並比較這三種模型所預測出的結果跟實際結果。
 ## Runtime Environment
