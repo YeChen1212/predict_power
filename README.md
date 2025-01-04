@@ -119,3 +119,4 @@ CYUT Machine Learning Class Final Report for AI CUP 2024 Fall 根據區域微氣
   - LightGBM_stacking的結果最好，以此方法實際去比賽AICUP秋季賽根據區域微氣候資料預測發電量競賽。
     - Private Leaderboard 22 名。
     - Private Leaderboard 成績(總誤差)619536.9。
+    - 我們AICUP的程式連結 : https://github.com/zxcvb8885123/al-cup
