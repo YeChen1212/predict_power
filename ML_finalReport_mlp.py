@@ -46,7 +46,7 @@ Xtest_scaled = scaler.transform(Xpred)
 predPower = mlp_reg.predict(Xtest_scaled)
 predPower = np.clip(predPower, 0, None)
 
-plt.figure(figsize=(20, 5))
+plt.figure(figsize=(30, 5))
 originalPower = test_data[['Power(mW)']].values
 plt.plot(originalPower, label='original', color='blue', linewidth=2)
 plt.plot(predPower, label='predict', color='orange', linestyle='--', linewidth=2)
